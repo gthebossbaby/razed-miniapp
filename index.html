@@ -893,7 +893,7 @@ function renderReferralPage(data) {
   document.getElementById('ref-bar-fill').style.width = pct + '%';
 
   // Build referral link
-  const botUsername = 'RazedCasinoBot'; // ← update this to your actual bot username
+  const botUsername = 'LuminaCasinoBot'; // ← update this to your actual bot username
   const refLink = `https://t.me/${botUsername}?startapp=ref_${S.user.id}`;
   document.getElementById('ref-link-display').textContent = refLink;
 
@@ -936,7 +936,7 @@ function renderReferralPage(data) {
 
 function shareReferral() {
   if (!S.user) { showLogin(); return; }
-  const botUsername = 'RazedCasinoBot'; // ← update to your bot username
+  const botUsername = 'LuminaCasinoBot'; // ← update to your bot username
   const refLink = `https://t.me/${botUsername}?startapp=ref_${S.user.id}`;
   const text = `🎰 Play at Razed Casino — 4000+ games, instant crypto payouts! Join with my link and we both get bonuses!`;
 
