@@ -6,7 +6,7 @@ const Database = require('better-sqlite3');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const BOT_TOKEN = process.env.BOT_TOKEN || '8701251505:AAHRw2YFY78WMG7f1XuNq8GGy3e6v08rbMM';
+const BOT_TOKEN = process.env.BOT_TOKEN;
 
 // ─── DATABASE SETUP ───────────────────────────────────────────────
 const db = new Database(path.join(__dirname, 'razed.db'));
