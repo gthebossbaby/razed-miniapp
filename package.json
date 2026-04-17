@@ -1,7 +1,7 @@
 {
-  "name": "razed-miniapp",
+  "name": "lumina-miniapp",
   "version": "1.0.0",
-  "description": "Razed Casino Telegram Mini App",
+  "description": "Lumina Casino Telegram Mini App",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
