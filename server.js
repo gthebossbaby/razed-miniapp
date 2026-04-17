@@ -7,6 +7,7 @@ const Database = require('better-sqlite3');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = process.env.BOT_TOKEN;
+const BOT_USERNAME = process.env.BOT_USERNAME;
 
 // ─── DATABASE SETUP ───────────────────────────────────────────────
 const db = new Database(path.join(__dirname, 'razed.db'));
@@ -170,6 +171,12 @@ app.get('/api/referrals/:userId', (req, res) => {
   const bonusUnlocked = referralCount >= 5;
 
   res.json({ referralCount, referrals, bonusUnlocked });
+});
+
+
+// ─── API: PUBLIC CONFIG (safe to expose) ─────────────────────────
+app.get("/api/config", (req, res) => {
+  res.json({ botUsername: BOT_USERNAME || "" });
 });
 
 // ─── CATCH-ALL: serve index.html ─────────────────────────────────
