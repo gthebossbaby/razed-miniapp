@@ -1,8 +1,8 @@
-# Razed Casino Telegram Mini App — Deployment Guide
+# Lumina Casino Telegram Mini App — Deployment Guide
 
 ## What's in this project
 - `server.js` — Node.js backend (Express + SQLite)
-- `public/index.html` — The full Razed-style frontend
+- `public/index.html` — The full Lumina-style frontend
 - `package.json` — Dependencies
 - `railway.toml` — Railway deployment config
 
@@ -12,7 +12,7 @@
 
 1. Go to https://github.com and sign in
 2. Click the **+** button → **New repository**
-3. Name it `razed-miniapp`
+3. Name it `lumina-miniapp`
 4. Set it to **Private**
 5. Click **Create repository**
 
@@ -27,18 +27,19 @@ Then upload these files:
 1. Go to https://railway.app
 2. Sign in with your GitHub account
 3. Click **New Project** → **Deploy from GitHub repo**
-4. Select your `razed-miniapp` repo
+4. Select your `lumina-miniapp` repo
 5. Railway will auto-detect Node.js and start deploying
 
 6. Once deployed, click on your service → **Settings** → **Environment**
-7. Add this environment variable:
+7. Add these environment variables:
    ```
    BOT_TOKEN = your_telegram_bot_token_here
+   BOT_USERNAME = your_actual_bot_username_without_@
    ```
 8. Railway will redeploy automatically
 
 9. Go to **Settings** → **Networking** → **Generate Domain**
-10. Copy your URL — it looks like `https://razed-miniapp-production.up.railway.app`
+10. Copy your URL — it looks like `https://lumina-miniapp-production.up.railway.app`
 
 ---
 
@@ -59,9 +60,9 @@ Then upload these files:
 
 In `public/index.html`, find these two lines (around line 290 and 310):
 ```js
-const botUsername = 'RazedCasinoBot';
+const botUsername = 'LuminaCasinoBot';
 ```
-Replace `RazedCasinoBot` with your actual bot's username (without the @).
+Replace `LuminaCasinoBot` with your actual bot's username (without the @).
 
 Then push the change to GitHub — Railway auto-redeploys.
 
@@ -94,13 +95,12 @@ Then push the change to GitHub — Railway auto-redeploys.
 
 ## Files structure
 ```
-razed-miniapp/
+lumina-miniapp/
 ├── server.js          ← Backend API + static file serving
 ├── package.json       ← Node dependencies  
 ├── railway.toml       ← Railway deployment config
 ├── .gitignore
-├── razed.db           ← Auto-created SQLite database (NOT committed)
+├── lumina.db          ← Auto-created SQLite database (NOT committed)
 └── public/
-    ├── index.html     ← Full frontend app
-    └── cdn_cms.razed.com/  ← Razed assets (icons, images)
+    └── index.html     ← Full frontend app
 ```
